@@ -1,0 +1,21 @@
+.finished {
+    text-decoration: line-through;
+    color: red;
+}
+
+img {
+    width: 200px;
+}
+
+#displayed-list {
+   margin: 0px;
+}
+
+.edit {
+    margin-left: -15px;
+}
+
+
+hr {
+    border: 1px solid blue;
+}

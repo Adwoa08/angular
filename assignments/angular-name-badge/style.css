@@ -1,0 +1,30 @@
+.center {
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+
+
+
+.textbox {
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+#submit {
+    background-color: skyblue;
+    margin-top: 20px;
+}
+
+
+.userInput {
+    margin-bottom: 20px;
+}
+
+
+.result {
+    margin-top: 50px;
+}

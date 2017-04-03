@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="secondExercise">
+<head>
+    <meta charset="UTF-8">
+    <title>second Assignment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+
+
+    <div ng-repeat="item in player.kills">
+        <h1>{{item.handle}}</h1>
+        <h2>{{item.rank}}</h2>
+        <div ng-repeat="clan in item.clan">
+            <span>{{clan}}</span>
+        </div>
+    </div>
+
+
+
+    <script src="ang.js"></script>
+</body>
+</html>

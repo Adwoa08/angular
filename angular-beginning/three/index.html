@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="practice">
+
+<head>
+    <meta charset="UTF-8">
+    <title>first angular exercise</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+   
+
+  
+    First name <input ng-model="newPerson.firstName"> 
+    Last name <input ng-model="newPerson.lastName">
+
+    <button ng-click="submit(newPerson)">submit</button>
+    
+
+    <div ng-repeat="name in people">
+        Your name is: 
+        {{name.firstName}} 
+        {{name.lastName}}
+    </div>
+    
+    
+    
+    
+    <script src="ang.js"></script>
+</body>
+
+</html>

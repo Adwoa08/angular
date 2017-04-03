@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myToDo">
+
+<head>
+    <meta charset="UTF-8">
+    <title>name badge</title>
+
+
+    <!--  Bring in Bootstrap from the CDN  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <!--    My Styling-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainController">
+    <header>
+        <div class="container">
+            <h1>ToDo List</h1>
+            <p id="head-paragraph">Type all you will</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <input name="new-list" placeholder="Item to do" ng-model="newPost.title">
+        <input name="new-list" placeholder="img URL" ng-model="newPost.imgUrl">
+        <input name="new-list" placeholder="Description" ng-model="newPost.description">
+        <input name="new-list" placeholder="Price in dollars" ng-model="newPost.price">
+
+        <button ng-click="addTo(newPost)">Add Item To List!</button>
+
+
+
+
+        <div class="row" ng-repeat="something in posts track by $index">
+            <div ng-hide="editing">
+                <div class="panel">
+                    <input type="checkbox" ng-model="terry">
+                    <h3 ng-class="{'finished': something.completed}">{{something.title}}</h3>
+                    <input type="checkbox" ng-click="edit(something)" ng-model="somthing.completed">
+                </div>
+                <div class="panel"> {{something.description}} </div>
+                <div class="panel"> {{something.price}} </div>
+                <div class="panel"> <img ng-src="{{something.imgUrl}}" /></div>
+                <button ng-click="deleteMe($index)">Remove Item</button>
+            </div>
+
+
+            <div ng-show="editing">
+                <h3>edit your item</h3>
+                <div><input type="text" placeholder="{{something.title}}" ng-model="something.title"></div>
+                <div><input type="url" placeholder="img URL" ng-model="something.imgUrl"></div>
+                <div><input type="text" placeholder="Description" ng-model="something.description"></div>
+                <div><input type="number" placeholder="Price in Dollars" ng-model="something.price"></div>
+
+                <button ng-click="edit(something); editing = !editing">Save</button>
+            </div>
+            <button ng-click="editing = !editing">Edit</button>
+
+        </div>
+
+        <!--
+        <ul class="unordered" ng-repeat="list in apiData">
+            <li>{{list.title}}</li>
+        </ul>
+-->
+    </div>
+
+
+
+
+
+    <!--    Angular CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+    <!--My AngularJs-->
+    <script src="app.js"></script>
+    <script src="services/httpService.js"></script>
+</body>
+
+</html>

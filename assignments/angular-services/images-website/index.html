@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myImageApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image App</title>
+    <!--    BOOTSTRAP CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--    MY STYLING-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="container">
+
+        <header class="row">
+            <form name="images" novalidate>
+                <div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"><input placeholder="Title" type="text" ng-model="image.title"></div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"><input placeholder="Img Url" type="imgUrl" ng-model="image.Url"></div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"><input placeholder="description" type="text" ng-model="image.description"></div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 box"><button ng-click="submit(image)">Submit</button></div>
+            </form>
+        </header>
+        <div ng-repeat="item in imageObject" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 box">
+            <p>{{item.title}}</p>
+            <p>{{item.description}}</p>
+            <img ng-src="{{item.Url}}" />
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!--container ends -->
+
+
+
+
+    <!-- ANGULAR CD   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <!--MY APP JS-->
+    <script src="app.js"></script>
+    <!--    cartoon-object js-->
+    <script src="services/cartoon-objects.js"></script>
+</body>
+
+</html>

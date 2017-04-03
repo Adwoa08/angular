@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nameBadge">
+
+<head>
+    <meta charset="UTF-8">
+    <title>name-badge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body ng-controller="mainController">
+    <div class="container">
+
+        <div class="row center">
+            <input class="col-xs-4 col-xs-offset-1 userInput" placeholder="First Name" ng-model="userFirstName">
+
+
+            <input class="col-xs-4 col-xs-offset-1 userInput" type="text" placeholder="Last Name" ng-model="userLastName">
+
+
+
+
+
+            <input type="text" placeholder="Email" class="col-xs-4 col-xs-offset-1 userInput" ng-model = "userEmail">
+
+
+            <input type="text" placeholder="Place of Birth" class="col-xs-4 col-xs-offset-1 userInput" ng-model = "userBirthPlace">
+
+
+
+
+            <input placeholder="Phone" class="col-xs-4 col-xs-offset-1 userInput" ng-model = "userPhone">
+
+
+            <input type="text" placeholder="Favorite Food" class="col-xs-4 col-xs-offset-1 userInput" ng-model = "userFood">
+        </div>
+
+        <div class="row textbox">
+            <textarea class="col-xs-9 col-xs-offset-1" rows="5" placeholder="Tell us about yourself"  ng-model = "userDescription"></textarea>
+        </div>
+
+        <div class="row">
+            <button class="col-xs-4 col-xs-offset-4" id="submit" ng-click="badgeInfo()" ng-disabled="!(userDescription && userFood && userPhone && userBirthPlace && userEmail && userFirstName && userLastName)">Submit</button>
+        </div>
+
+
+    </div>
+
+
+    <div class="container result">
+       
+        <div class="row">
+            <p class="col-xs-4 col-xs-offset-1">Name: <span>{{name}}</span></p>
+
+            <p class="col-xs-4 col-xs-offset-1">Phone: <span id="phoneNumber">{{phone}}</span></p>
+
+            <p class="col-xs-4 col-xs-offset-1">Place of birth: <span id="homeTown">{{birthPlace}}</span></p>
+
+            <p class="col-xs-4 col-xs-offset-1">Favorite food: <span id="food">{{food}}</span></p>
+
+            <p class="col-xs-4 col-xs-offset-1">Email: <span id="userName">{{email}}</span></p>
+        </div>
+
+        <div class="row textbox">
+            <textarea class="col-xs-9 col-xs-offset-1" rows="5" placeholder="Tell us about yourself">{{description}}</textarea>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script src="ang.js"></script>
+</body>
+
+</html>

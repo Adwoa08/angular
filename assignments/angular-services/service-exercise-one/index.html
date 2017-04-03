@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myPokemonApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Service</title>
+    <!--    BOOTSTRAP CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--    MY STYLING-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="index-header">
+        <h3 class="brand"><a class="brand-a" href="/#/home">Pokemon</a></h3>
+        <nav id="site-nav">
+            <li class="site-list"><a class="site-list-a" href="/#/home">HOME</a></li>
+            <li class="site-list"><a class="site-list-a" href="/#/about">ABOUT</a></li>
+            <li class="site-list"><a class="site-list-a" href="/#/contact">CONTACT</a></li>
+        </nav>
+    </header>
+<!--    Clear div-->
+   <div class="clear"></div>
+   
+<!--   IMAGE PRACTICE-->
+<!--
+    <div class="img-practice">
+        
+    </div>
+-->
+    
+    <!--    Clear div-->
+    <div class="clear"></div>
+
+
+
+    <ng-view></ng-view>
+
+
+
+
+
+
+    <!--    ANGULAR CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <!--ANGULAR ROUTE CDN-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+    <!--    MAIN APP SCRIPT-->
+    <script src="app.js"></script>
+    <!--    HOME SCRIPT-->
+    <script src="home/home.js"></script>
+    <!--    ABOUT SCRIPT-->
+    <script src="about/about.js"></script>
+    <!--    CONTACT SCRIPT-->
+    <script src="contact/contact.js"></script>
+    <!--    POKE-SERVICE SCRIPT-->
+    <script src="services/poke-service.js"></script>
+</body>
+</html>

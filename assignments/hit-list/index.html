@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myHitList">
+<head>
+    <meta charset="UTF-8">
+    <title>hit list</title>
+    <!--    BootStrap Starts-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <!--My Styling-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="container-fluid header">
+        <p id="brand"><img src="http://wallpapercave.com/wp/WdigW5T.png" width="200px" /><span id="brand-name">Don Corleone's Hit List</span> </p>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="item in hitList">
+                <figure>
+                    <div class="imgURL1 col-sm-4 text-center"><img ng-src="{{item.image}}">
+                        <figcaption>{{item.name}}</figcaption>
+                    </div>
+                </figure>
+
+            </div>
+        </div>
+
+    </div>
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 box" ng-repeat="item in hitList">
+                <img src="{{item.image}}" />
+                <h4>{{item.name}}</h4>
+            </div>
+        </div>
+    </div>
+-->
+
+
+
+    <!--Angular CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="services/httpService.js"></script>
+</body>
+</html>

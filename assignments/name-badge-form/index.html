@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nameBadge">
+
+<head>
+    <meta charset="UTF-8">
+    <title>name badge</title>
+
+
+    <!--  Bring in Bootstrap from the CDN  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <!--    My Styling-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainController">
+
+    <section class="row">
+        <div class="col-md-6 col-md-offset-3 well">
+            <form name="userData" novalidate>
+                <div class="input-divs col-md-5 col-md-offset-1">
+                    <input name="firstName" class="form-control" placeholder="First Name" ng-model="user.firstName">
+                </div>
+                <div class="input-divs col-md-5">
+                    <input required name="lastName" class="form-control" placeholder="Last Name" ng-model="user.lastName">
+                </div>
+                <div class="input-divs col-md-5 col-md-offset-1 input-divs">
+                    <input name="Email" class="form-control" placeholder="Email" ng-model="user.email">
+                </div>
+                <div class="col-md-5 input-divs">
+                    <input name="placeOfBirth" class="form-control" placeholder="Place of Birth" ng-model="user.placeOfBirth">
+                </div>
+                <div class="input-divs col-md-5 col-md-offset-1 input-divs">
+                    <input name="phone" class="form-control" placeholder="Phone" ng-model="user.phone" type="tel">
+                </div>
+                <div class="col-md-5 input-divs">
+                    <input name="favFood" class="form-control" placeholder="Favorite Food" ng-model="user.favFood">
+                </div>
+                <div class="col-md-10 col-md-offset-1 input-divs">
+                    <textarea name="description" class="form-control" placeholder="Describe yourself" ng-model="user.description"></textarea>
+                </div>
+                <div class="col-md-3 col-md-offset-5 input-divs">
+                    <button ng-disabled="userData.$invalid" class="btn btn-info" name="submit" ng-click="formSubmit(user)">Submit</button>
+                </div>
+
+            </form>
+        </div>
+        <div id="badge-result-container" class="col-md-6 col-md-offset-3">
+            <div class="badge-info" ng-repeat="userInfo in people">
+               <h3 id="badge">Badge:</h3>
+                <div class="">
+                    <p class="col-xs-4 col-xs-offset-1">Name: <span>{{userInfo.firstName}}  {{userInfo.lastName}}</span></p>
+
+                    <p class="col-xs-4 col-xs-offset-2">Phone: <span id="phoneNumber">{{userInfo.phone}}</span></p>
+
+                    <p class="col-xs-4 col-xs-offset-1">Place of birth: <span id="homeTown">{{userInfo.placeOfBirth}}</span></p>
+
+                    <p class="col-xs-4 col-xs-offset-2">Favorite food: <span id="food">{{userInfo.favFood}}</span></p>
+
+                    <p class="col-xs-4 col-xs-offset-1">Email: <span id="userName">{{userInfo.email}}</span></p>
+                </div>
+
+                <div class="row textbox">
+                    <textarea class="col-xs-10 col-xs-offset-1" rows="5" placeholder="Tell us about yourself">{{userInfo.description}}</textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!--    Angular CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+    <!--My AngularJs-->
+    <script src="app.js"></script>
+</body>
+
+</html>

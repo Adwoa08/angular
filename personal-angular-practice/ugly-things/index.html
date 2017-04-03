@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myUglyThings">
+<head>
+    <meta charset="UTF-8">
+    <title>Ugly Things</title>
+    <!--    BootStrap file-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <!--My Styling file-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body ng-controller="mainController">
+    <div class="continer header">
+        <form name="myForm">
+            <div class=" myRow well">
+                <input class="col-md-3 col-md-offset-1" placeholder="Title" ng-model="ugly.title">
+
+                <input class="col-md-3 col-md-offset-1" placeholder="img url" ng-model="ugly.url">
+
+
+                <input class="col-md-3 col-md-offset-1" placeholder="Description" ng-model="ugly.description">
+
+
+                <button ng-click="myFunction(ugly)" class="col-md-3 col-md-offset-1">Submit</button>
+
+            </div>
+        </form>
+    </div>
+    <div id="form-output" ng-repeat="item in uglyStuff track by $index">
+        <h2>{{item.title}}{{$index}}</h2>
+        <p>{{item.description}}</p>
+        <img src="{{item.url}}">
+        <button ng-click="myDelete($index)" class="col-md-3 col-md-offset-1">Delete</button>
+    </div>
+
+
+
+
+
+    <!--Angular file-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <!--    My JS file-->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.clear {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.brand {
+    line-height: 50px;
+    display: inline-block;
+}
+
+.brand-a {
+    display: block;
+    color: #999;
+}
+
+.brand-a:hover {
+    color: #c00;
+    text-decoration: none;
+}
+
+
+.img-practice {
+    background-image: url("images/green-leaf.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 25%;
+}

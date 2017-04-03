@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myYodaSpeak">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yoda Speak</title>
+
+    <!--    BootStrap file-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--My Styling Sheet-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body ng-controller="mainController">
+
+
+
+
+<input ng-model="sentence">
+
+<button ng-click="getYodaSpeak()">push</button>
+
+
+{{yodaSentence}}
+
+    
+
+    <!--Angular file    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+    <!--    My JS file-->
+    <script src="app.js"></script>
+    <script src="services/httpService.js"></script>
+</body>
+
+</html>

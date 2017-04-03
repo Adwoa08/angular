@@ -1,0 +1,11 @@
+header {
+    background-color: #00A2EB;
+    height: 150px;
+}
+
+img {
+    max-width: 200px;
+}
+.box {
+    text-align: center;
+}

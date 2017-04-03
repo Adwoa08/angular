@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myToDo">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New To Do List</title>
+
+
+    <!--  Bring in Bootstrap from the CDN  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <!--    My Styling-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainController">
+
+    <div class="container">
+
+        <!--    INPUTS AND SUMBIT-->
+        <div class="input-field well">
+            <form name="todo-form" novalidate>
+                <div class="row"><input class="col-xs-3" type="text" name="title" placeholder="Title of item" ng-model="newItem.title"></div>
+                <div class="row"><input class="col-xs-3" type="text" name="description" placeholder="Description of item" ng-model="newItem.description"></div>
+                <div class="row"><input class="col-xs-3" type="number" name="price" placeholder="Price of item in dollars" ng-model="newItem.price"></div>
+                <div class="row"><input class="col-xs-3" type="text" name="imgUrl" placeholder="Url of item image" ng-model="newItem.imgUrl"></div>
+                <div class="row"><button class="btn btn-primary" type="button" name="add-btn" ng-click="addNewItem(newItem)">Add New Item</button></div>
+            </form>
+        </div>
+        <div class="items-in-mylist" class="col-sm-6">
+            <div class="row" ng-repeat="item in oldItems track by $index">
+                <div id="displayed-list">
+                    <div ng-hide="editing = editing">
+                        <h3 ng-class="{finished: checked}">{{item.title}}</h3>
+                        <p>{{item.description}}</p>
+                        <p>$ {{item.price}}</p>
+                        <p><img ng-src="{{item.imgUrl}}" /></p>
+                        <div>
+                            <input type="checkbox" ng-model="checked"> Finished item
+                            <button class="btn btn-danger" type="button" ng-click="deleteOldItem($index, item._id)">Delete</button>
+                        </div>
+                    </div>
+                    <div ng-show="editing = editing">
+                        <div class="row"><input class="form-control" type="text" name="title" placeholder="Title of item" ng-model="item.title"></div>
+                        <div class="row"><input class="form-control" type="text" name="description" placeholder="Description of item" ng-model="item.description"></div>
+                        <div class="row"><input class="form-control" type="number" name="price" placeholder="Price of item in dollars" ng-model="item.price"></div>
+                        <div class="row"><input class="form-control" type="text" name="imgUrl" placeholder="Url of item image" ng-model="item.imgUrl"></div>
+                        <div class="row"><button class="btn btn-success" type="button" name="add-btn" ng-click="save(item); editing = !editing">Save</button></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-info edit" ng-click="editing = !editing">Edit</button><hr id="horizontal-line" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!--    Angular CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+    <!--My AngularJs-->
+    <script src="app.js"></script>
+</body>
+
+</html>
