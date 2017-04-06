@@ -14,7 +14,8 @@ app.controller("mainController", ["$scope", "httpServiceCall", function ($scope,
             $scope.display = response;
 
         })
-
+        $scope.lat = "";
+        $scope.lon = "";
     }
 
 }])
@@ -23,16 +24,16 @@ app.controller("mainController", ["$scope", "httpServiceCall", function ($scope,
 app.filter("tempMeasurement", function () {
 
 
-    return function (temp, degreeType) {
-        if (degreeType === undefined) {
-            return temp;
+    return function (display, selectedTemp) {
+        if (selectedTemp === undefined) {
+            return display;
         }
-        if (degreeType === '°C') {
-            return ((temp - 32) * 5 / 9).toFixed(2) + '°C';
-        } else if (degreeType === "°K") {
-            return ((temp + 459.67) * 5 / 9).toFixed(2) + "°K";
+        if (selectedTemp === '°C') {
+            return ((display - 32) * 5 / 9).toFixed(2) + '°C';
+        } else if (selectedTemp === "°K") {
+            return ((display + 459.67) * 5 / 9).toFixed(2) + "°K";
         } else {
-            return temp.toFixed(2) + "°F";
+            return display.toFixed(2) + "°F";
         }
     }
 })

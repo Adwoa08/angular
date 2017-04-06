@@ -12,8 +12,9 @@ app.service("httpServiceCall", ["$http", function ($http) {
 
         return $http.jsonp("https://api.darksky.net/forecast/29c550d05387f56384e3a8417e70f45e/" + temp + '?callback=JSON_CALLBACK')
             .then(function (response) {
-                var tempInfo = response.data.currently.temperature;
+                var tempInfo = response.data;
                 return tempInfo;
+            
             })
 
     }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myViewApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite State</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="page-header">
+        <a class="brand" href="/#/home">NYC</a>
+        <i class="fa fa-bars menu-icon" style="font-size:24px"></i>
+        <nav class="nav-bar">
+            <ul class="unordered-list">
+                <li class="nav-list"><a href="/#/home">Home</a></li>
+                <li class="nav-list"><a href="/#/about">About</a></li>
+                <li class="nav-list"><a href="/#/whyilove">WhyILove</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="clear"></div>
+
+
+
+    <!--    THE VIEW-->
+    <ng-view></ng-view>
+
+
+    <!--    THE FOOTER-->
+    <!--
+    <footer class="container">
+        <p class="footer-paragraph">I am the footer of the page!</p>
+    </footer>
+-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="home/home.js"></script>
+    <script src="about/about.js"></script>
+    <script src="whyilove/whyilove.js"></script>
+</body>
+</html>
