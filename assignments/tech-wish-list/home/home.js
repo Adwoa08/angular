@@ -2,7 +2,7 @@ var app = angular.module("myTechApp");
 
 app.controller("homeCtrl", ["$scope", function($scope){
     
-//    $scope.fastcar = 'https://s-media-cache-ak0.pinimg.com/originals/7a/26/23/7a26238e063473d4f1b88d34361e92c2.jpg';
+    $scope.fastcar = 'https://s-media-cache-ak0.pinimg.com/originals/7a/26/23/7a26238e063473d4f1b88d34361e92c2.jpg';
     
     
     $scope.otherTech = [
@@ -26,24 +26,14 @@ app.controller("homeCtrl", ["$scope", function($scope){
 }])
 
 
-//app.directive("fastCar", function(){
+//app.directive("homeTech", function(){
 //    
 //    return {
-//        retrict: "EA", 
+//        scope: {
+//            "homeTechno": "="
+//        },
 //        
-//        template: "<img href='https://s-media-cache-ak0.pinimg.com/originals/7a/26/23/7a26238e063473d4f1b88d34361e92c2.jpg'>"
+//        templateUrl: "directives/home-tpl/home-tpl.html"
 //    }
+//    
 //})
-
-
-app.directive("homeTech", function(){
-    
-    return {
-        scope: {
-            "homeTechno": "="
-        },
-        
-        templateUrl: "directives/home-tpl/home-tpl.html"
-    }
-    
-})

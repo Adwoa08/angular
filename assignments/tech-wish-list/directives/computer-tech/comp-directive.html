@@ -1,4 +1,4 @@
-<div ng-repeat="item in techno">
+<div ng-class="{'col-sm-4': horizontal}" ng-repeat="item in techno">
     <h2>{{item.itemName}}</h2>
     <img class="otherImg" ng-src="{{item.itemImage}}">
     <h4>{{item.itemPrice | currency: "€"}}</h4>

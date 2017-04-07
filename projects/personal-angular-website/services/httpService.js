@@ -11,7 +11,12 @@ app.service("httpServiceCall", ["$http", function ($http) {
             return "us"
         } else if(location === "Britain" || location === "britain"){
             return "uk"
-        }
+        } else if(location === "korea" || location === "Korea"){
+            return "southKorea"
+        } else if(location === "ghana" || location === "Ghana"){
+            return "gha"
+        } 
+        return location;
     }
     
     this.getQuotes = function (country) {
@@ -24,15 +29,11 @@ app.service("httpServiceCall", ["$http", function ($http) {
         destination = normalizeLocation(destination);
         
         
-        
-        
-        var key = "vs428264159776212343779819234691";
+        var key = "vs428264159776212343779819234691"; 
         return $http.get("http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/usd/en-US/" + departure + "/" + destination + "/anytime/anytime?apikey=" + key)
             .then(function (response) {
-                self.quotes = response.data;
-//                console.log(self.quotes.Quotes[0].MinPrice);
-                console.log(self.quotes);
-                return self.quotes;
+                return response.data;
+
             })
 
     }
