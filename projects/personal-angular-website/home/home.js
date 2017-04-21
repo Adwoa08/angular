@@ -8,7 +8,7 @@ app.controller("homeCtrl", ["$scope", "httpServiceCall", function ($scope, httpS
         $scope.min = "";
 //        console.log(country);
         httpServiceCall.getQuotes(country).then(function (data) {
-
+            console.log(data);
             $scope.display = 0;
             if (data.Quotes.length > 0) {
                 $scope.min = data.Quotes[0].MinPrice;
@@ -31,8 +31,8 @@ app.controller("homeCtrl", ["$scope", "httpServiceCall", function ($scope, httpS
 //                console.log(data.Carriers[j]);
             }
 
-            $scope.country.departure = '';
-            $scope.country.destination = '';
+//            $scope.country.departure = '';
+//            $scope.country.destination = '';
         });
 
         //        httpServiceCall.getQuotes(country).then(function(quotes){
